@@ -1,0 +1,387 @@
+
+/* =====================================
+   1. ROOT COLORS
+===================================== */
+
+:root {
+    --navy: #003366;
+    --orange: #FE781E;
+    --blue: #5F9FE0;
+    --light-blue: #E2F2FD;
+    --white: #FFFFFF;
+    --border: #D6E9FF;
+}
+
+
+/* =====================================
+   2. UNIVERSAL STYLES
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--navy);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: var(--navy);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   3. COMMON BUTTON STYLES
+===================================== */
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid var(--orange);
+    cursor: pointer;
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.btn-outline {
+    background-color: var(--white);
+    color: var(--orange);
+    padding: 6px 18px;
+}
+
+
+/* =====================================
+   4. NAVIGATION BAR
+===================================== */
+
+.navbar {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.logo img {
+    height: 38px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.nav-links a.active {
+    color: var(--orange);
+    border-bottom: 3px solid var(--orange);
+}
+
+
+/* =====================================
+   5. HERO SECTION
+===================================== */
+
+.hero {
+    background-color: var(--light-blue);
+    padding: 60px 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Left side hero content */
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.small-title {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 46px;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.orange {
+    color: var(--orange);
+}
+
+.hero-description {
+    color: var(--blue);
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* Right side hero illustration */
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* =====================================
+   6. LEARNING JOURNEY SECTION
+===================================== */
+
+.journey {
+    padding: 50px 0 70px;
+}
+
+.journey h2 {
+    font-size: 30px;
+    color: var(--navy);
+}
+
+.journey-subtitle {
+    color: var(--blue);
+    margin: 5px 0 25px;
+}
+
+/* Learning cards using CSS Grid */
+
+.journey-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.journey-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 16px;
+}
+
+/* Card numbers */
+
+.step-number {
+    display: block;
+    color: var(--orange);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.journey-card h3 {
+    font-size: 16px;
+    color: var(--navy);
+    margin: 8px 0 5px;
+}
+
+.journey-card p {
+    font-size: 14px;
+    color: var(--blue);
+}
+
+
+/* =====================================
+   7. FOOTER
+===================================== */
+
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+}
+
+
+/* =====================================
+   8. TABLET RESPONSIVENESS
+   Screen size: 769px - 1024px
+===================================== */
+
+@media (max-width: 1024px) {
+
+    /* Learning cards: 3 columns */
+
+    .journey-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Reduce hero heading size */
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-image img {
+        max-width: 400px;
+    }
+
+}
+
+
+/* =====================================
+   9. MOBILE RESPONSIVENESS
+   Screen size: 768px and below
+===================================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .nav-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Hide desktop navigation links */
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Hero section: vertical layout */
+
+    .hero {
+        padding: 35px 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    /* Learning cards: single column */
+
+    .journey {
+        padding: 35px 0 45px;
+    }
+
+    .journey h2 {
+        font-size: 26px;
+    }
+
+    .journey-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .journey-card {
+        width: 100%;
+        padding: 18px;
+    }
+
+}
+
+
+/* =====================================
+   10. SMALL MOBILE SCREENS
+   Screen size: 375px and below
+===================================== */
+
+@media (max-width: 375px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .btn-outline {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .journey h2 {
+        font-size: 23px;
+    }
+
+}
